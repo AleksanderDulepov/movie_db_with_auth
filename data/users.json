@@ -1,0 +1,20 @@
+[
+    {
+        "role": "user",
+        "password": "AB+nfCImJeweF3R9kalIQrKIFsKgTJ+9zTDJRKqkgd8=",
+        "id": 1,
+        "username": "alex"
+    },
+    {
+        "role": "user",
+        "password": "9DgdzfVoA2J9ztkHwSiupLI7FPlDQBABcdbtIDbpZx4=",
+        "id": 2,
+        "username": "ann"
+    },
+    {
+        "role": "admin",
+        "password": "epTr5rvISmdD8QEAgg3A06d3t2OM8pg9K2++yi8Eokk=",
+        "id": 3,
+        "username": "janjack"
+    }
+]
