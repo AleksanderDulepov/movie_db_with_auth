@@ -19,6 +19,7 @@ def create_app(config):
     # создание приложения
     application = Flask(__name__)
     # конфиги
+
     application.config.from_object(config)  # (конфигурация загружается из обьекта)
     application.app_context().push()  # применение загруженных конфигов
 
@@ -40,28 +41,29 @@ def configure_app(application_):
 def create_db():
     db.drop_all()
     db.create_all()
-    # заполнение таблицы movie
+
     with open("data/movies.json", "r", encoding="utf-8") as file:
         data_movies = json.load(file)
-    objects_movies = [Movie(**i) for i in data_movies]
+        objects_movies = [Movie(**i) for i in data_movies]
 
     db.session.add_all(objects_movies)
     # заполнение таблицы director
     with open("data/directors.json", "r", encoding="utf-8") as file:
         data_directors = json.load(file)
-    objects_directors = [Director(**i) for i in data_directors]
+        objects_directors = [Director(**i) for i in data_directors]
 
     db.session.add_all(objects_directors)
     # заполнение таблицы genre
     with open("data/genres.json", "r", encoding="utf-8") as file:
         data_genres = json.load(file)
-    objects_genres = [Genre(**i) for i in data_genres]
+        objects_genres = [Genre(**i) for i in data_genres]
 
     db.session.add_all(objects_genres)
     # заполнение таблицы user
-    with open("data/users.json") as file:
+    with open("data/users.json", "r", encoding="utf-8") as file:
         data_users = json.load(file)
-    objects_users = [User(**i) for i in data_users]
+        objects_users = [User(**i) for i in data_users]
+
     db.session.add_all(objects_users)
 
     db.session.commit()

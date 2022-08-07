@@ -5,8 +5,8 @@ class MovieService:
     def __init__(self, dao):
         self.dao = dao
 
-    def get_one(self, d_id):
-        return self.dao.get_one(d_id)
+    def get_one(self, m_id):
+        return self.dao.get_one(m_id)
 
     def get_with_filter(self, data):
         # parameters удалить пустые позиции
@@ -20,8 +20,8 @@ class MovieService:
         new_item = Movie(**data)
         return self.dao.do_post(new_item)
 
-    def do_put(self, d_id, data):
-        item = self.get_one(d_id)
+    def do_put(self, m_id, data):
+        item = self.get_one(m_id)
 
         item.title = data.get('title')
         item.description = data.get('description')
@@ -32,10 +32,10 @@ class MovieService:
         item.director_id = data.get('director_id')
         return self.dao.do_post(item)
 
-    def do_patch(self, d_id, data):
+    def do_patch(self, m_id, data):
         data.pop('id',None) #удалить id, если он будет передан
-        return self.dao.do_update(d_id, data)
+        return self.dao.do_update(m_id, data)
 
-    def delete_one(self, d_id):
-        return self.dao.do_delete(d_id)
+    def delete_one(self, m_id):
+        return self.dao.do_delete(m_id)
 

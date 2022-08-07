@@ -11,10 +11,7 @@ class MovieDAO:
         return item
 
     def get_all(self):
-        # all_items = self.session.query(Movie).all()#list
-        all_items = self.session.query(Movie)  # flask_sqlalchemy
-        # all_items = Movie.query# flask_sqlalchemy
-        # all_items = Movie.query.all()#list
+        all_items = self.session.query(Movie)
         return all_items
 
     def get_with_filter(self, parameters):

@@ -1,7 +1,6 @@
 import jwt
 from flask import request
 from flask_restx import abort
-
 from app.helper.constants import JWT_SECRET, JWT_ALGORITHM
 
 

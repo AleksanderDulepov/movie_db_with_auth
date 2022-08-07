@@ -6,6 +6,7 @@ class Genre(db.Model):
     __tablename__ = 'genre'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
+    # movies=db.relationship("Movie")
 
 class GenreSchema(Schema):
     id = fields.Int(dump_only=True)
